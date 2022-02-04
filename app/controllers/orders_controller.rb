@@ -2,6 +2,13 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    ordered_product_ids = @order.line_items.map { |product| product[:product_id] } # [id1, id2]
+    
+    @ordered_products = Product.where(id: ordered_product_ids).map { |product| {
+        product: product,
+        quantity: @order.line_items.find { |item| item[:product_id] == product.id }[:quantity]
+      } }
   end
 
   def create
