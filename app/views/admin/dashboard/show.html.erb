@@ -14,9 +14,17 @@
       <td class="text-center"><%= @products %></td>
       <td class="text-center"><%= @categories %></td>
     </tr>
+    <tr>
+      <td>
+        <form action="/admin/products">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Manage Products</button>
+        </form>
+      </td>
+      <td>
+        <form action="/admin/categories">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Manage Categories</button>
+        </form>
+      </td>
+    </tr>
   </tbody>
 </table>
-
-<form action="/admin/products">
-  <button type="submit" class="btn btn-primary btn-lg btn-block">Manage Products</button>
-</form>
