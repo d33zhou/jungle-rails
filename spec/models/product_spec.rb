@@ -16,7 +16,7 @@ RSpec.describe Product, type: :model do
         quantity: 105,
         # category is auto-generated
       })
-      @product.save!
+      @product.save! # using bang as test should error out if save here fails
 
       expect(@product.id).to be_present
     end
