@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product details page", type: :feature, js: true do
+RSpec.feature "Visitor adds an item to cart which increases cart count", type: :feature, js: true do
   
   # SETUP
   before :each do
@@ -17,13 +17,13 @@ RSpec.feature "Visitor navigates to product details page", type: :feature, js: t
     end
 
     # ACT
-    visit root_path
+    visit root_path # start from home page
 
   end
 
-  scenario "They navigate from the home page to the product detail page by clicking on a product" do
+  scenario "They click the 'Add' button to add item to cart, which increases cart count by 1" do
     
-    page.find('.products').first(:link, 'Details').click
+    page.find('.products').first(:button, 'Add').click
     
     sleep 5 # give page time to render before saving screenshot
 
@@ -32,7 +32,7 @@ RSpec.feature "Visitor navigates to product details page", type: :feature, js: t
     # puts page.html
 
     # VERIFY
-    expect(page).to have_css '.main-img'
+    expect(page).to have_content 'My Cart (1)'
   end
 
 end
