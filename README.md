@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2. Database is persisted through PostgreSQL, admin authentication is handled via bcrypt HTTP authentication, and the testing suite uses RSpec, Capybara, and Poltergeist for Model and Feature specs.
 
 ## Additional Steps for Apple M1 Machines
 
@@ -19,6 +19,17 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 6. Sign up for a Stripe account
 7. Put Stripe (test) keys into appropriate .env vars
 8. Run `bin/rails s -b 0.0.0.0` to start the server
+
+## Screenshots
+
+### Home Page
+!["Homepage"](https://github.com/d33zhou/jungle-rails/blob/master/docs/home-page.png?raw=true)
+
+### Product Page
+!["Product"](https://github.com/d33zhou/jungle-rails/blob/master/docs/product-page.png?raw=true)
+
+### Admin Page
+!["Admin"](https://github.com/d33zhou/jungle-rails/blob/master/docs/admin-page.png?raw=true)
 
 ## Stripe Testing
 
